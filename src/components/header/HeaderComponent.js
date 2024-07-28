@@ -1,11 +1,71 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import avatarDefault from './img/avataaars.svg';
+import avatarWink from './img/avataaars-2.svg';
+import burgerMenu from './img/hamburger-menu.svg';
 
 const HeaderComponent = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  //STATES
+  const [isHoverAvatar, setIsHoverAvatar] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-export default HeaderComponent
+  return (
+    <header className="flex justify-between items-center w-[100vw] h-[150px] p-5 bg-yellow-100 ">
+        <div
+        className=
+        /* overflow-hidden make avatar rounded like its container */
+        {`relative w-[120px] h-[120px] bg-white rounded-full transition-all duration-500 ease-in-out
+          ${
+          isHoverAvatar 
+          ? ' border-2 border-black bg-gray-200' 
+          : ''
+          }
+        `}
+        onMouseEnter={() => setIsHoverAvatar(true)}
+        onMouseLeave={() => setIsHoverAvatar(false)}
+      >
+        <img
+          src={avatarDefault}
+          alt="MY AVATAR"
+          className={`absolute top-0 left-0 w-full h-full transition-shadow duration-500 ease-linear ${
+            isHoverAvatar ? 'opacity-0' : 'opacity-100'
+          }`}
+        />
+        <img
+          src={avatarWink}
+          alt="MY AVATAR"
+          className={`absolute top-0 left-0 w-full h-full transition-shadow duration-500 ease-linear ${
+            isHoverAvatar ? 'opacity-100' : 'opacity-0'
+          }`}
+        />
+      </div>
+      <div className="right_menu relative w-[50px] h-[50px] rounded-full transition-all duration-500 ease-linear">
+        <img
+          src={burgerMenu}
+          alt="Burger Menu"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="cursor-pointer"
+        />
+        <div
+          className={`absolute top-full right-0 p-1 mt-2 w-[150px] bg-white border rounded shadow-lg transition-opacity duration-300 ease-in-out ${
+            isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+        >
+          <ul>
+            <Link to="/">
+              <li className="px-4 py-3 ease-in-out duration-200 hover:bg-gray-100 cursor-pointer">Home</li>
+            </Link>
+            <Link to="/contact">
+              <li className="px-4 py-3 ease-in-out duration-200 hover:bg-gray-100 cursor-pointer">Contact</li>
+            </Link>
+            <Link to="/aboutme">
+              <li className="px-4 py-3 ease-in-out duration-200 hover:bg-gray-100 cursor-pointer">About Me</li>
+            </Link>
+          </ul>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default HeaderComponent;
