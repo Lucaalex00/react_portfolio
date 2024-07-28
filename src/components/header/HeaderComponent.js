@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import avatarDefault from './img/avataaars.svg';
 import avatarWink from './img/avataaars-2.svg';
 import burgerMenu from './img/hamburger-menu.svg';
+import burgerMenuVertical from './img/burger.menu-vertical.svg'
 
 const HeaderComponent = () => {
   //STATES
@@ -10,11 +11,11 @@ const HeaderComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="flex justify-between items-center w-[100vw] h-[150px] p-5 bg-yellow-100 ">
+    <header className="flex fixed justify-between items-center w-[100vw] h-[120px] p-5 bg-yellow-100 ">
         <div
         className=
         /* overflow-hidden make avatar rounded like its container */
-        {`relative w-[120px] h-[120px] bg-white rounded-full transition-all duration-500 ease-in-out
+        {`relative w-[100px] h-[100px] bg-white rounded-full transition-all duration-500 ease-in-out
           ${
           isHoverAvatar 
           ? ' border-2 border-black bg-gray-200' 
@@ -44,7 +45,13 @@ const HeaderComponent = () => {
           src={burgerMenu}
           alt="Burger Menu"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="cursor-pointer"
+          className={`absolute cursor-pointer transition-opacity duration-300 ease-in-out ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}
+        />
+        <img
+          src={burgerMenuVertical}
+          alt="Burger Menu Vertical"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className={`absolute cursor-pointer transition-opacity duration-500 ease-in-out ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`}
         />
         <div
           className={`absolute top-full right-0 p-1 mt-2 w-[150px] bg-white border rounded shadow-lg transition-opacity duration-300 ease-in-out ${
