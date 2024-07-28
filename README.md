@@ -2,7 +2,12 @@
 
 `npm run start`  -> *Server Launch*
 
+## DEPENDENCIES :
+*React*
+*PostCSS*
+*Tailwind*
 
-## Credits : 
+## CREDITS : 
 **Luca Cirio**
 ` https://github.com/Lucaalex00 ` -> *CTRL + CLICK*
+
