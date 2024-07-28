@@ -1,10 +1,26 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import HeaderComponent from "./components/header/HeaderComponent";
+import HomePage from "./views/HomePage"
+import AboutPage from './views/AboutPage';
+import ContactPage from './views/ContactPage';
+import ErrorPage from './views/ErrorPage';
+
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <HeaderComponent/>
-    </div>
+    <Router>
+      <div className="min-h-screen bg-gray-100 flex justify-center">
+        <HeaderComponent/>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/aboutme" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
