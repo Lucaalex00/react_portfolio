@@ -1,10 +1,16 @@
 import React from 'react'
+import FrontEndComponent from './frontend/FrontEndComponent'
 
 const MainComponent = () => {
   return (
-    <div>
-      
-    </div>
+    <React.Fragment>
+      {/* MAIN COMPONENTS */}
+
+      {/* FRONTEND */}
+      <FrontEndComponent/>
+
+
+    </React.Fragment>
   )
 }
 

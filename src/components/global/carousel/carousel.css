@@ -1,0 +1,36 @@
+/* carousel.css */
+
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Usa la larghezza del contenitore */
+    height: 100px; /* Altezza del carosello, modificabile se necessario */
+  }
+  
+  .carousel-track {
+    display: flex;
+    width: 200%; /* Due volte la larghezza del contenitore per un effetto continuo */
+    animation: marquee 20s linear infinite;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    flex: 1;
+  }
+  
+  .carousel-image {
+    width: 100px; /* Larghezza delle immagini */
+    height: 100px; /* Altezza delle immagini */
+    object-fit: contain; /* Assicura che l'immagine riempia il contenitore senza distorsioni */
+    padding: 0.3rem;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  

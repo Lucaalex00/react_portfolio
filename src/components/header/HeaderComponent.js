@@ -11,15 +11,15 @@ const HeaderComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="flex fixed justify-between items-center w-[100vw] h-[120px] p-5 bg-white ">
+    <header className="flex fixed justify-between items-center w-[100vw] h-[120px] bg-gray-50 bg-opacity-50 p-5 z-50">
         <div
         className=
         /* overflow-hidden make avatar rounded like its container */
-        {`relative flex w-[100px] h-[100px] bg-gray-100 rounded-full transition-all duration-500 ease-in-out
+        {`relative flex w-[100px] h-[100px] shadow-lg bg-gray-100 rounded-full transition-all duration-500 ease-in-out
           ${
           isHoverAvatar 
           ? ' border-2 border-black bg-gray-200' 
-          : 'border-white border-2'
+          : 'border-gray-150 border-2'
           }
         `}
         onMouseEnter={() => setIsHoverAvatar(true)}
@@ -55,19 +55,19 @@ const HeaderComponent = () => {
           className={`absolute cursor-pointer transition-opacity duration-500 ease-in-out ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`}
         />
         <div
-          className={`absolute flex items-center top-full right-0 p-1 mt-2 w-[20vw] h-[30vh] shadow-lg border rounded transition-opacity duration-300 ease-in-out ${
+          className={`absolute flex items-center top-full right-0 p-3 mt-2 w-[10vw] shadow-lg border rounded transition-opacity duration-300 ease-in-out ${
             isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         >
           <ul className='w-[100%]'>
             <Link to="/">
-              <li className="px-4 py-3 ease-in-out duration-200 hover:bg-gray-300 cursor-pointer">Home</li>
+              <li className="px-4 py-3 ease-in-out duration-200 hover:text-gray-500 cursor-pointer">Home</li>
             </Link>
             <Link to="/contact">
-              <li className="px-4 py-3 ease-in-out duration-200 hover:bg-gray-300 cursor-pointer">Contact</li>
+              <li className="px-4 py-3 ease-in-out duration-200 hover:text-gray-500 cursor-pointer">Contact</li>
             </Link>
             <Link to="/aboutme">
-              <li className="px-4 py-3 ease-in-out duration-200 hover:bg-gray-300 cursor-pointer">About Me</li>
+              <li className="px-4 py-3 ease-in-out duration-200 hover:text-gray-500 cursor-pointer">About Me</li>
             </Link>
           </ul>
         </div>
