@@ -1,36 +1,62 @@
-/* carousel.css */
-
 .carousel-wrapper {
     position: relative;
     overflow: hidden;
-    width: 100%; /* Usa la larghezza del contenitore */
-    height: 100px; /* Altezza del carosello, modificabile se necessario */
+    width: 100%; /* Adatta la larghezza al contenitore padre */
+    height: 100px; /* Altezza del carosello */
   }
   
   .carousel-track {
     display: flex;
-    width: 200%; /* Due volte la larghezza del contenitore per un effetto continuo */
-    animation: marquee 20s linear infinite;
+    width: 200%; /* Due volte la larghezza per contenere le immagini duplicate */
+    animation: marquee 20s linear infinite; /* Animazione continua */
   }
   
   .carousel-slide {
     display: flex;
-    flex: 1;
+    width: 50%; /* Ogni slide occupa metà della larghezza del carosello */
   }
   
   .carousel-image {
     width: 100px; /* Larghezza delle immagini */
     height: 100px; /* Altezza delle immagini */
-    object-fit: contain; /* Assicura che l'immagine riempia il contenitore senza distorsioni */
+    object-fit: contain; /* Mantieni la proporzione dell'immagine */
     padding: 0.3rem;
   }
   
+  /* Definisce l'animazione dello scorrimento */
   @keyframes marquee {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(-50%); /* Sposta il carosello di una larghezza completa */
     }
   }
   
+  /* Media Query per dispositivi mobili */
+  @media (max-width: 980px) {
+    .carousel-wrapper {
+      height: 70px; /* Riduci l'altezza per i dispositivi mobili */
+    }
+  
+    .carousel-image {
+      width: 80px; /* Riduci la larghezza delle immagini */
+      height: 80px; /* Riduci l'altezza delle immagini */
+      padding: 0.2rem; /* Riduci il padding */
+    }
+  } @media (max-width: 800px) {
+    .carousel-wrapper {
+      height: 80px; /* Riduci l'altezza per i dispositivi mobili */
+    }
+  
+    .carousel-image {
+      width: 70px; /* Riduci la larghezza delle immagini */
+      height: 70px; /* Riduci l'altezza delle immagini */
+      padding: 0.2rem; /* Riduci il padding */
+    }
+  }
+  @media (max-width: 700px) {
+    .carousel-wrapper {
+      display: none;
+  }
+}

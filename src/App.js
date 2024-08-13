@@ -11,7 +11,7 @@ import ErrorPage from './views/ErrorPage';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-300 flex flex-col items-center ">
+      <div className="min-h-screen bg-gray-400 flex flex-col items-center ">
         <HeaderComponent/>
         <Routes>
           <Route path="/" element={<HomePage />} />

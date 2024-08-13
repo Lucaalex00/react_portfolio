@@ -2,7 +2,7 @@ import React from 'react';
 import profilePic from "./img/Profile_img.jpeg"
 const Jumbotron = () => {
   return (
-    <div className="jumbotron_container flex items-center justify-center h-[500px] my-[150px] hover:shadow-md ease-linear duration-500 w-1/2 mx-auto">
+    <div className="jumbotron_container flex items-center justify-center h-[500px] my-[150px] hover:shadow-md ease-linear duration-500 w-1/2 mx-auto overflow-auto">
       <div className="flex items-center w-full max-w-4xl mx-auto rounded-lg overflow-hidden">
         <div className="w-1/3 ms-5">
           <img
