@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import FrontEndCarouselComponent from '../../global/carousel/frontEndCarouselComponent';
 
 const FrontEndComponent = () => {
   return (
@@ -10,8 +11,10 @@ const FrontEndComponent = () => {
         <strong className='text-orange-600'> FrontEnd </strong> development using HTML5, CSS3, JavaScript, ReactJS, VueJS, NPM, Tailwind, Bootstrap, Material UI, SASS. <br/>
         
         <Link to="FrontEnd" className='hover:text-orange-600 duration-500'>...Read more</Link>
-        
         </p>
+        <div className='my-10'>
+          <FrontEndCarouselComponent/>
+        </div>
       </div>
     </div>
   )

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import BackEndCarouselComponent from '../../global/carousel/backEndCarouselComponent';
 
 const BackEndComponent = () => {
   return (
@@ -10,8 +11,11 @@ const BackEndComponent = () => {
         <strong className='text-orange-600'> BackEnd </strong> development using PHP, C#, Python, .NET and Databases MySQL & SQL Server <br/>
         
         <Link to="Backend" className='hover:text-orange-600 duration-500'>...Read more</Link>
-        
+
         </p>
+        <div className='my-10'>
+          <BackEndCarouselComponent/>
+        </div>
       </div>
     </div>
   )

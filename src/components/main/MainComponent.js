@@ -12,14 +12,11 @@ const MainComponent = () => {
 
       {/* FRONTEND */}
       <FrontEndComponent/>
-      <div className='my-10'>
-        <FrontEndCarouselComponent/>
-      </div>
       <WaveComponent/>
+
+      {/* BACKEND */}
       <BackEndComponent/>
-      <div className='my-10'>
-        <BackEndCarouselComponent/>
-      </div>
+      
 
     </React.Fragment>
   )
