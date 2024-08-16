@@ -4,6 +4,7 @@ import avatarDefault from './img/avataaars.svg';
 import avatarWink from './img/avataaars-2.svg';
 import burgerMenu from './img/hamburger-menu.svg';
 import burgerMenuVertical from './img/burger.menu-vertical.svg'
+import "./header.css";
 
 const HeaderComponent = () => {
   //STATES
@@ -59,15 +60,18 @@ const HeaderComponent = () => {
             isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <ul className='w-[100%]'>
+          <ul className='hidden_menu'>
             <Link to="/">
-              <li className="px-4 py-3 ease-in-out duration-200 hover:text-gray-500 cursor-pointer">Home</li>
-            </Link>
-            <Link to="/contact">
-              <li className="px-4 py-3 ease-in-out duration-200 hover:text-gray-500 cursor-pointer">Contact</li>
+              <li className="hidden_menu_item px-4 py-3 ease-in-out duration-200 hover:text-gray-500 cursor-pointer">Home</li>
             </Link>
             <Link to="/aboutme">
-              <li className="px-4 py-3 ease-in-out duration-200 hover:text-gray-500 cursor-pointer">About Me</li>
+              <li className="hidden_menu_item px-4 py-3 ease-in-out duration-200 hover:text-gray-500 cursor-pointer">About Me</li>
+            </Link>
+            <Link to="/projects">
+              <li className="hidden_menu_item px-4 py-3 ease-in-out duration-200 hover:text-gray-500 cursor-pointer">Home</li>
+            </Link>
+            <Link to="/contact">
+              <li className="hidden_menu_item px-4 py-3 ease-in-out duration-200 hover:text-gray-500 cursor-pointer">Contacts</li>
             </Link>
           </ul>
         </div>

@@ -55,7 +55,7 @@
       padding: 0.2rem; /* Riduci il padding */
     }
   }
-  @media (max-width: 880px) {
+  @media screen and (max-width: 880px) {
     .carousel-wrapper {
       height: 80px; /* Riduci l'altezza per i dispositivi mobili */
     }
@@ -66,7 +66,7 @@
       padding: 0.1rem; /* Riduci il padding */
     }
   }
-  @media (max-width: 750px) {
+  @media screen and (max-width: 750px) {
     .carousel-wrapper {
       display: none;
   }
