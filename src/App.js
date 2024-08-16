@@ -6,12 +6,13 @@ import HomePage from "./views/HomePage"
 import AboutPage from './views/AboutPage';
 import ContactPage from './views/ContactPage';
 import ErrorPage from './views/ErrorPage';
+import FooterComponent from './components/footer/FooterComponent';
 
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-400 flex flex-col items-center ">
+      <div className="min-h-screen bg-gray-400 flex flex-col items-center pb-[100px] ">
         <HeaderComponent/>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -19,6 +20,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
+        <FooterComponent/>
       </div>
     </Router>
   );
