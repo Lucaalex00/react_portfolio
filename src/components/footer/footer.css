@@ -1,6 +1,6 @@
 @media screen and (max-width:500px) {
     .container{
-        justify-content: center;
+        justify-content: center !important;
         .right_menu{
             display: none;
         }

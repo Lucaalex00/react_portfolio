@@ -12,7 +12,7 @@ import FooterComponent from './components/footer/FooterComponent';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-400 flex flex-col items-center pb-[100px] ">
+      <div className="min-h-screen bg-gray-500 flex flex-col items-center ">
         <HeaderComponent/>
         <Routes>
           <Route path="/" element={<HomePage />} />

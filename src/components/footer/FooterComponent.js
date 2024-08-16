@@ -1,19 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import "./footer.css";
+import NavComponent from '../nav/NavComponent';
 
 const FooterComponent = () => {
   return (
     <React.Fragment>
-      <footer className="bg-gray-800 bg-opacity-80 text-white py-6 w-full fixed bottom-0">
+      <footer className="bg-gray-500 bg-opacity-90 text-white py-6 w-full fixed bottom-0">
         <div className="container mx-auto flex justify-between items-center">
        {/* LEFT MENU */}
-          <nav className="left_menu  flex space-x-4">
-              <Link to="/" className="text-gray-300 hover:text-white hover:bg-black duration-500 hover:border-gray-400 border p-2">Home</Link>
-              <Link to="/aboutme" className="text-gray-300 hover:text-white hover:bg-black duration-500 hover:border-gray-400 border p-2">About Me</Link>
-              <Link to="/projects" className="text-gray-300 hover:text-white hover:bg-black duration-500 hover:border-gray-400 border p-2">Projects</Link>
-              <Link to="/contact" className="text-gray-300 hover:text-white hover:bg-black duration-500 hover:border-gray-400 border p-2">Contacts</Link>
-          </nav>
+          <NavComponent/>
 
         {/* RIGHT MENU */}
           <div className=" right_menu flex space-x-4">

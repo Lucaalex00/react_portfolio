@@ -1,9 +1,8 @@
 import React from 'react'
 import WaveComponent from '../global/wave/waveComponent';
 import FrontEndComponent from './frontend/FrontEndComponent';
-import FrontEndCarouselComponent from '../global/carousel/frontEndCarouselComponent';
 import BackEndComponent from './backend/BackEndComponent';
-import BackEndCarouselComponent from '../global/carousel/backEndCarouselComponent';
+import "./main.css"
 const MainComponent = () => {
   return (
     <React.Fragment>
@@ -17,6 +16,7 @@ const MainComponent = () => {
       {/* BACKEND */}
       <BackEndComponent/>
       
+      <div className='final_section w-full h-[200px] '></div>
 
     </React.Fragment>
   )

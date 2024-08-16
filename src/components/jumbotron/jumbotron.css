@@ -1,0 +1,21 @@
+@media screen and (max-width: 500px) {
+    
+    .jumbotron{
+        width: 80vw  !important;
+
+    }
+    .jumbo_container{
+        display: block !important;
+        margin: auto;
+        overflow: hidden;
+        width: 100%  !important;
+        
+    }
+    .jumbo_container> .text_side, .jumbo_container .img_side {
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        
+    }
+    
+}
