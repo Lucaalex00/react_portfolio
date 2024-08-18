@@ -47,29 +47,30 @@ const HeaderComponent = () => {
   return (
     <header className="flex fixed justify-between items-center w-[100vw] h-[120px] bg-gray-500 rounded-s-md rounded-e-md bg-opacity-50 p-5 z-50">
       <div
-        className={`relative flex w-[100px] h-[100px] shadow-lg bg-gray-500 bg-opacity-50 rounded-full transition-all duration-500 ease-in-out avatar-container ${
+        className={`relative flex w-[100px] h-[100px] shadow-lg bg-gray-500 bg-opacity-50 rounded-full transition-all duration-500 ease-in-out avatar-container ps-1 ${
           isHoverAvatar 
-            ? 'border-2 border-black bg-gray-300' 
+            ? 'border border-black bg-gray-300' 
             : 'border-gray-600 border-1'
         } ${showMessage ? 'clicked' : ''}`}
         onMouseEnter={() => setIsHoverAvatar(true)}
         onMouseLeave={() => setIsHoverAvatar(false)}
       >
-        <img
-          src={avatarDefault}
-          alt="MY AVATAR"
-          className={`top-0 left-0 w-full h-full transition-shadow duration-500 ease-linear ${
-            isHoverAvatar ? 'hidden' : 'block'
-          }`}
-        />
-        <img
-          src={avatarWink}
-          alt="MY AVATAR"
-          className={`top-0 left-0 w-full h-full transition-shadow duration-500 ease-linear ${
-            isHoverAvatar ? 'block' : 'hidden'
-          }`}
-        />
-
+        <Link to="/">
+          <img
+            src={avatarDefault}
+            alt="MY AVATAR"
+            className={`top-0 left-0 w-full h-full transition-shadow duration-500 ease-linear ${
+              isHoverAvatar ? 'hidden' : 'block'
+            }`}
+          />
+          <img
+            src={avatarWink}
+            alt="MY AVATAR"
+            className={`top-0 left-0  w-full h-full transition-shadow duration-500 ease-linear ${
+              isHoverAvatar ? 'block' : 'hidden'
+            }`}
+          />
+        </Link>
         {/* Message Bubble */}
         <div className={`message-bubble ${showMessage ? 'appear' : 'disappear'}`}>
           {message}

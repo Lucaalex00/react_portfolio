@@ -1,12 +1,15 @@
 @media screen and (max-width:500px) {
+    
     .left_menu{
         width: 50%;
         margin: auto;
         flex-direction: column;
+        padding: 0 !important;
         >*{
-            width: 80%;
+            width: 100%;
             text-align: center;
-            padding: 4px;
+            padding: 4px !important;
+            font-size: 0.8rem;
         }
     }
 }
