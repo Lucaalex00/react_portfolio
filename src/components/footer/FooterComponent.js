@@ -7,7 +7,7 @@ const FooterComponent = () => {
     <React.Fragment>
       <footer className="bg-gray-500 bg-opacity-80 text-white py-6 w-full fixed bottom-0">
         <div className="container mx-auto flex justify-between items-center">
-       {/* LEFT MENU */}
+        {/* LEFT MENU */}
           <NavComponent/>
 
         {/* RIGHT MENU */}

@@ -3,5 +3,8 @@
         height: 50%;
         overflow-y: auto;
     }
+    .bg_square{
+        display: none;
+    }
     
 }
