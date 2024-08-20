@@ -6,11 +6,11 @@ const BackEndPage = () => {
   return (
       <React.Fragment>
       <div className="flex w-full items-center justify-center px-10">
-  <div className="card w-full my-[150px] max-w-2xl my-5 p-5 bg-gray-400 bg-opacity-80 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-2xl overflow-auto">
+  <div className="card w-full my-[150px] max-w-2xl p-5 bg-gray-400 bg-opacity-80 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-2xl overflow-auto">
     <h2 className="text-2xl font-bold mb-5 text-gray-800 text-center">BACK-END</h2>
     <p className="text-gray-600 text-center text-[1rem]">
       I began my journey into Backend development with PHP, where I first encountered the world of server-side programming. <br />
-      Through <strong>PHP</strong>, I was introduced to Object-Oriented Programming <strong>(OOP)</strong>, which allowed me to build more structured and scalable applications. <br />
+      Through <strong>PHP</strong>, I was introduced to Object-Oriented Programming <strong>(OOP)</strong>, which allowed me to build more structured and scalable <Link to="projects">applications. </Link> <br />
       Mastering OOP concepts like encapsulation, inheritance, and polymorphism helped me write cleaner, reusable code, making my backend solutions more maintainable and efficient.
     </p>
     <br />

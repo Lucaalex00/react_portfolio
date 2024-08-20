@@ -5,7 +5,7 @@ const FrontEndPage = () => {
   return (
    <React.Fragment>
     <div className="flex w-full items-center justify-center px-10">
-      <div className="card w-full my-[150px] max-w-2xl my-5 p-5 bg-gray-400 bg-opacity-80 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-2xl overflow-auto">
+      <div className="card w-full my-[150px] max-w-2xl p-5 bg-gray-400 bg-opacity-80 shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-2xl overflow-auto">
         <h2 className="text-2xl font-bold mb-5 text-gray-800 text-center">FRONT-END</h2>
         <p className="text-gray-600 text-center text-[1rem]">
           In the Front-end, I use Markup and Stylesheet languages such as <strong>HTML</strong> & <strong>CSS</strong>. <br />
