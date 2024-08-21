@@ -26,11 +26,15 @@ const HeaderComponent = () => {
     ];
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     setMessage(randomMessage);
+    setIsHoverAvatar(true)
     setShowMessage(true);
+    
 
     // Hide the message after 5 seconds
     setTimeout(() => {
       setShowMessage(false);
+      setIsHoverAvatar(false)
+
     }, 5000);
   };
 
@@ -39,7 +43,6 @@ const HeaderComponent = () => {
     const interval = setInterval(() => {
       generateRandomMessage();
     }, Math.floor(Math.random() * 15000) + 5000); // Random between 15 and 20 seconds
-
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
   }, []);
@@ -53,7 +56,7 @@ const HeaderComponent = () => {
             : 'border-gray-600 border-1'
         } ${showMessage ? 'clicked' : ''}`}
         onMouseEnter={() => setIsHoverAvatar(true)}
-        onMouseLeave={() => setIsHoverAvatar(false)}
+        onMouseLeave={() => !showMessage ? setIsHoverAvatar(false) : ''}
       >
         <Link to="/">
           <img
@@ -71,6 +74,7 @@ const HeaderComponent = () => {
             }`}
           />
         </Link>
+
         {/* Message Bubble */}
         <div className={`message-bubble ${showMessage ? 'appear' : 'disappear'}`}>
           {message}
