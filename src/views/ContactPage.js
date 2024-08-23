@@ -15,7 +15,7 @@ const ContactPage = () => {
   };
 
   return (
-      <div className="min-h-screen w-2/3 bg-gray-100 flex flex-col md:flex-row my-[150px] p-8">
+      <div className="min-h-full w-2/3 bg-gray-100 flex flex-col md:flex-row my-[150px] p-8">
       <div className="md:w-2/3 flex flex-col space-y-4">
 
         {/* LinkedIn Card */}
@@ -28,7 +28,7 @@ const ContactPage = () => {
           <img
             src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
             alt="LinkedIn logo"
-            className="w-12 h-12 brightness-50 "
+            className="w-12 h-12 brightness-50"
           />
           <div className="text-white">
             <h3 className="text-xl font-bold">LinkedIn</h3>
@@ -72,6 +72,22 @@ const ContactPage = () => {
           </div>
         </a>
 
+        {/* PDF CV Card */}
+        <a
+          href="/files/Luca_Cirio_CV.pdf"
+          download
+          className="bg-red-700 p-6 rounded-lg shadow-lg flex items-center space-x-4 hover:opacity-90 transition duration-300"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/337/337946.png"
+            alt="PDF logo"
+            className="w-12 h-12"
+          />
+          <div className="text-white">
+            <h3 className="text-xl font-bold">Download CV</h3>
+            <p>Curriculum Vitae</p>
+          </div>
+        </a>
       </div>
 
       {/* Contact Form on the Right */}
@@ -92,4 +108,4 @@ const ContactPage = () => {
   )
 }
 
-export default ContactPage
+export default ContactPage;
