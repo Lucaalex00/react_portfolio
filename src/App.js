@@ -14,6 +14,7 @@ import BackEndPage from './views/Front-Back/BackEndPage';
 
 //CONTEXTS
 import { MenuProvider } from './stores/FooterMenuContext';
+import ProjectsPage from './views/Projects/ProjectsPage';
 
 
 function App() {
@@ -27,10 +28,12 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/aboutme" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
 
             {/* READ MORE PAGES */}
             <Route path="/frontend" element={<FrontEndPage />} />
             <Route path="/backend" element={<BackEndPage />} />
+
 
             {/* ERROR PAGE */}
             <Route path="*" element={<ErrorPage />} />

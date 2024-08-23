@@ -58,7 +58,7 @@ const HeaderComponent = () => {
         onMouseEnter={() => setIsHoverAvatar(true)}
         onMouseLeave={() => !showMessage ? setIsHoverAvatar(false) : ''}
       >
-        <Link to="/">
+        <Link to="/" >
           <img
             src={avatarDefault}
             alt="MY AVATAR"
@@ -100,16 +100,16 @@ const HeaderComponent = () => {
           }`}
         >
           <ul className='hidden_menu'>
-            <Link to="/">
+            <Link to="/" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <li className="hidden_menu_item px-4 py-3 ease-in-out duration-200 hover:text-gray-500 cursor-pointer">Home</li>
             </Link>
-            <Link to="/aboutme">
+            <Link to="/aboutme" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <li className="hidden_menu_item px-4 py-3 ease-in-out duration-200 hover:text-gray-500 cursor-pointer">About Me</li>
             </Link>
-            <Link to="/projects">
+            <Link to="/projects" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <li className="hidden_menu_item px-4 py-3 ease-in-out duration-200 hover:text-gray-500 cursor-pointer">Projects</li>
             </Link>
-            <Link to="/contact">
+            <Link to="/contact" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <li className="hidden_menu_item px-4 py-3 ease-in-out duration-200 hover:text-gray-500 cursor-pointer">Contacts</li>
             </Link>
           </ul>

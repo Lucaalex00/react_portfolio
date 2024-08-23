@@ -30,7 +30,7 @@ const FrontEndPage = () => {
             <li>
             <strong>May 2024:</strong> I started working for a consultancy company called ALTEN IT, based in GENOVA (GE), Liguria.
               <br />
-              Here, I discovered <strong>React.js</strong>, a highly used JavaScript framework for creating dynamic applications without the need to reload the page, thus allowing for greater speed, flexibility, and efficiency.
+              Here, I discovered <strong>React.js</strong>, a highly used JavaScript library for creating dynamic applications without the need to reload the page, thus allowing for greater speed, flexibility, and efficiency.
             </li>
             <br></br>
             {/* ADD ANGULAR */}
