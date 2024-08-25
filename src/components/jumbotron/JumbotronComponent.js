@@ -9,7 +9,7 @@ const Jumbotron = () => {
         <div className="img_side w-1/3 ms-5">
           <img
             src={profilePic} 
-            alt="Jumbotron Image"
+            alt="Jumbotron Logo"
             className="jumbo_img w-full min-w-[100px] h-full object-cover rounded border shadow-lg hover:rounded-full duration-[3s] ease-in-out"
           />
         </div>

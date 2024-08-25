@@ -38,7 +38,7 @@ const AboutPage = () => {
         <strong className='text-gray-800'>Do I really want to continue a job that has been the same for centuries, without living the life I've always wanted?</strong> <br/> When I returned from that trip, my mind had only one answer : <strong className='text-black text-xl'>NO.</strong>
       </p>
       <p className="text-gray-600 text-lg leading-relaxed mb-4">
-        Without hesitation, I dove headfirst into the world of programming. I started with a course on <a href="https://www.udemy.com" target="_blank" className="text-orange-600 hover:text-orange-800">Udemy</a> to learn the key concepts and get into a developer's mindset. In 2024, I consolidated everything I had learned and enrolled in a comprehensive course with <a href="https://boolean.careers/" target="_blank" className="text-orange-600 hover:text-orange-800">BOOLEAN S.R.L.</a> to take my skills to the next level and begin this new career for real.
+        Without hesitation, I dove headfirst into the world of programming. I started with a course on <a href="https://www.udemy.com" target="_blank" rel="noreferrer" className="text-orange-600 hover:text-orange-800">Udemy</a> to learn the key concepts and get into a developer's mindset. In 2024, I consolidated everything I had learned and enrolled in a comprehensive course with <a href="https://boolean.careers/" target="_blank" rel="noreferrer" className="text-orange-600 hover:text-orange-800">BOOLEAN S.R.L.</a> to take my skills to the next level and begin this new career for real.
       </p>
 
       <h2 className="text-2xl font-semibold text-gray-900 mb-3">Staying Balanced...</h2>
