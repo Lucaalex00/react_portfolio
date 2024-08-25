@@ -94,14 +94,14 @@ const ProjectsPage = () => {
     <div className="p-5 my-20 mx-auto max-w-screen-lg">
       <h1 className="text-center text-3xl font-bold mb-8">GitHub Repositories</h1>
       
-      <div className="flex flex-col md:flex-row items-center mb-6 mt-4 gap-4">
+      <div className="flex flex-col md:flex-row items-center mb-6 gap-4">
         {/* Combined input for name and language filter */}
         <input
           type="text"
           placeholder="Filter by name or language..."
           value={filter}
           onChange={handleFilterChange}
-          className="p-2 border border-gray-300 bg-transparent text-gray-900 rounded flex-grow"
+          className="p-2 border mt-5 border-gray-300 bg-transparent text-gray-900 rounded flex-grow"
           style={{ maxWidth: '400px' }}
         />
         
