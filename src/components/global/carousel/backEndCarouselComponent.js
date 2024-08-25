@@ -1,7 +1,7 @@
 import React from 'react';
 import './carousel.css';
 import PHP from './img/PHP.png.png';
-import cSharp from './img/c#.png.png';
+import cSharp from './img/Csharp.png.png';
 import dotNET from './img/.NET.png.svg';
 import Laravel from './img/Laravel.png.svg';
 import Python from './img/Python.png.svg';

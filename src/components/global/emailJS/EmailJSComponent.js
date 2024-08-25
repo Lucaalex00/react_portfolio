@@ -1,31 +1,35 @@
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
 
 const EmailJSComponent = () => {
-  const [isConfirmed, setIsConfirmed] = useState(false); // Stato di conferma
-  const [confirmationCode, setConfirmationCode] = useState(''); // Codice di conferma generato
-  const [userCode, setUserCode] = useState(''); // Codice inserito dall'utente
-  const [message, setMessage] = useState(''); // Messaggio di feedback
-  const [userEmail, setUserEmail] = useState(''); // Salva l'email dell'utente
-  const [userName, setUserName] = useState(''); // Salva il nome dell'utente
-  const form = useRef(); // Ref per il form del messaggio
+  const [isConfirmed, setIsConfirmed] = useState(false); // Confirmation state
+  const [confirmationCode, setConfirmationCode] = useState(''); // Generated confirmation code
+  const [userCode, setUserCode] = useState(''); // Code entered by the user
+  const [message, setMessage] = useState(''); // Feedback message
+  const [userEmail, setUserEmail] = useState(''); // Store user's email
+  const [userName, setUserName] = useState(''); // Store user's name
+  const [count, setCount] = useState(0); // Count to manage the confirmation state
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false); // Button disabled state
+  const form = useRef(); // Ref for the message form
+  const navigate = useNavigate(); // Hook for navigation
 
-  // Funzione per inviare l'email di conferma
+  // Function to send the confirmation email
   const sendConfirmationEmail = (e) => {
     e.preventDefault();
 
-    // Genera un codice di conferma
+    // Generate a confirmation code
     const generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
     setConfirmationCode(generatedCode);
 
-    // Salva l'email e il nome inseriti dall'utente
+    // Store the user's email and name
     setUserEmail(e.target.user_email.value);
     setUserName(e.target.from_name.value);
 
     const templateParams = {
       from_name: e.target.from_name.value,
       user_email: e.target.user_email.value,
-      confirmation_code: generatedCode, // Include il codice di conferma
+      confirmation_code: generatedCode, // Include the confirmation code
     };
 
     emailjs.send('service_6lwbh8d', 'template_j4ucpnr', templateParams, 'vYzCrWSpVoegMPEj7')
@@ -38,12 +42,12 @@ const EmailJSComponent = () => {
         setMessage('Failed to send confirmation email');
       });
 
-    e.target.reset(); // Resetta il form dopo l'invio della conferma
+    e.target.reset(); // Reset the form after sending confirmation
   };
 
-  // Funzione per verificare il codice di conferma inserito dall'utente
+  // Function to verify the confirmation code entered by the user
   const verifyConfirmationCode = () => {
-    if (userCode === confirmationCode) {
+    if (userCode === confirmationCode && userCode.length !== 0) {
       setIsConfirmed(true);
       setMessage('Email confirmed successfully! Now you can send your message.');
     } else {
@@ -51,7 +55,7 @@ const EmailJSComponent = () => {
     }
   };
 
-  // Funzione per inviare il messaggio finale dopo la conferma
+  // Function to send the final message after confirmation
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -60,16 +64,22 @@ const EmailJSComponent = () => {
       return;
     }
 
+    const currentDate = new Date().toLocaleString(); // Get the current date and time
     const templateParams = {
-      from_name: userName, // Usa il nome salvato
-      user_email: userEmail, // Usa l'email salvata
+      from_name: userName, // Use the stored name
+      user_email: userEmail, // Use the stored email
       message: form.current.message.value,
+      date: currentDate, // Include the current date and time
     };
 
+    setCount(1); // Set count to 1 to disable the textarea and button
+    setIsButtonDisabled(true); // Disable the button
     emailjs.send('service_6lwbh8d', 'template_t5booah', templateParams, 'vYzCrWSpVoegMPEj7')
       .then((result) => {
         console.log(result.text);
         setMessage('Your message has been sent successfully!');
+
+        setTimeout(() => navigate('/'), 3000); // Redirect to home page after 3 seconds
       })
       .catch((error) => {
         console.log(error.text);
@@ -120,11 +130,13 @@ const EmailJSComponent = () => {
               placeholder="Your Message"
               rows="4"
               required
+              disabled={count === 1 || isButtonDisabled} // Disable the textarea if count is 1 or button is disabled
             ></textarea>
           </div>
           <button
             type="submit"
             className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 transition duration-300"
+            disabled={isButtonDisabled} // Disable the button if it is disabled
           >
             Send Message
           </button>

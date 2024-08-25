@@ -15,7 +15,6 @@ import BackEndPage from './views/Front-Back/BackEndPage';
 //CONTEXTS
 import { MenuProvider } from './stores/FooterMenuContext';
 import ProjectsPage from './views/Projects/ProjectsPage';
-import ConfirmEmail from './views/ConfirmEmail';
 
 
 function App() {
