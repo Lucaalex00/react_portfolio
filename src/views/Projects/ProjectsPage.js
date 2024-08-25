@@ -91,7 +91,7 @@ const ProjectsPage = () => {
 
   // Repo views
   return (
-    <div className="p-5 my-20 mx-auto max-w-screen-lg">
+    <div className="p-5 mt-[180px] mb-[50px] mx-auto max-w-screen-lg">
       <h1 className="text-center text-3xl font-bold mb-8">GitHub Repositories</h1>
       
       <div className="flex flex-col md:flex-row items-center mb-6 gap-4">
@@ -101,7 +101,7 @@ const ProjectsPage = () => {
           placeholder="Filter by name or language..."
           value={filter}
           onChange={handleFilterChange}
-          className="p-2 border mt-5 border-gray-300 bg-transparent text-gray-900 rounded flex-grow"
+          className="p-2 border border-gray-300 bg-transparent w-full text-gray-900 rounded flex-grow"
           style={{ maxWidth: '400px' }}
         />
         
@@ -109,7 +109,7 @@ const ProjectsPage = () => {
         <select
           value={sortOrder}
           onChange={handleSortChange}
-          className="p-2 border bg-transparent border-gray-800 rounded"
+          className="p-2 border bg-transparent border-gray-300 rounded"
         >
           <option value="desc">Newest first</option>
           <option value="asc">Oldest first</option>
