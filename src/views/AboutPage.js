@@ -2,7 +2,7 @@ import React from 'react'
 
 const AboutPage = () => {
   return (
-    <div className="bg-white p-10 rounded-lg shadow-lg max-w-3xl my-[150px]">
+    <div className="bg-white p-10 rounded-lg shadow-lg max-w-4xl w-[80%] my-[150px]">
       <h1 className="text-4xl font-bold text-gray-900 mb-6">About Me</h1>
       <p className="text-gray-600 text-lg leading-relaxed mb-4">
         Hi, I'm <strong>Luca Cirio</strong>, born in 2000. <br/> 
