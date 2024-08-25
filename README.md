@@ -6,6 +6,7 @@
 *React*
 *PostCSS*
 *Tailwind*
+*EmailJS*
 
 ## CREDITS : 
 **Luca Cirio**
