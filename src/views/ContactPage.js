@@ -15,7 +15,7 @@ const ContactPage = () => {
   };
 
   return (
-      <div className="min-h-full w-2/3 bg-gray-100 flex flex-col md:flex-row my-[150px] p-8">
+      <div className="min-h-full w-2/3 bg-gray-100 flex flex-col md:flex-row my-[150px] lg:p-8 p-3">
       <div className="md:w-2/3 flex flex-col space-y-4">
 
         {/* LinkedIn Card */}
@@ -23,7 +23,7 @@ const ContactPage = () => {
           href="https://www.linkedin.com/in/luca-cirio-453485283/"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-blue-600 p-6 rounded-lg shadow-lg flex items-center space-x-4 hover:opacity-90 transition duration-300"
+          className="bg-blue-600 sm:p-6 p-3 rounded-lg shadow-lg flex items-center space-x-4 hover:opacity-90 transition duration-300"
         >
           <img
             src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
@@ -41,7 +41,7 @@ const ContactPage = () => {
           href="https://github.com/Lucaalex00"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gray-800 p-6 rounded-lg shadow-lg flex items-center space-x-4 hover:opacity-90 transition duration-300"
+          className="bg-gray-800 sm:p-6 p-3 rounded-lg shadow-lg flex items-center space-x-4 hover:opacity-90 transition duration-300"
         >
           <img
             src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
@@ -59,7 +59,7 @@ const ContactPage = () => {
           href="https://www.instagram.com/luca.alex_/"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-pink-600 p-6 rounded-lg shadow-lg flex items-center space-x-4 hover:opacity-90 transition duration-300"
+          className="bg-pink-600 sm:p-6 p-3 rounded-lg shadow-lg flex items-center space-x-4 hover:opacity-90 transition duration-300"
         >
           <img
             src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
@@ -76,7 +76,7 @@ const ContactPage = () => {
         <a
           href="/files/Luca_Cirio_CV.pdf"
           download
-          className="bg-red-700 p-6 rounded-lg shadow-lg flex items-center space-x-4 hover:opacity-90 transition duration-300"
+          className="bg-red-700 sm:p-6 p-3 rounded-lg shadow-lg flex items-center space-x-4 hover:opacity-90 transition duration-300"
         >
           <img
             src="https://cdn-icons-png.flaticon.com/512/337/337946.png"

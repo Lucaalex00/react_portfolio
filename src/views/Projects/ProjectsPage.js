@@ -1,30 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import FetchGitHubRepos from '../../stores/apiProjects';
 
+// Function to generate a random dark color
+const generateRandomColor = () => {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  // Ensure the color is not too light
+  const isTooLight = parseInt(color.substring(1), 16) > 0xFFFFFF;
+  return isTooLight ? generateRandomColor() : color;
+};
+
+// Function to generate a consistent color for a repository based on its ID
+const getColorForRepo = (repoId) => {
+  // Generate a consistent color based on repoId
+  const seed = parseInt(repoId, 10);
+  const color = `#${(seed * 1234567).toString(16).slice(-6)}`;
+  return color;
+};
+
 const ProjectsPage = () => {
   const [repos, setRepos] = useState([]); 
+  const [filteredRepos, setFilteredRepos] = useState([]); // State for filtered repos
   const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null); 
-
-  // Function to generate a random dark color
-  const generateRandomColor = () => {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    // Ensure the color is not too light
-    const isTooLight = parseInt(color.substring(1), 16) > 0xFFFFFF;
-    return isTooLight ? generateRandomColor() : color;
-  };
+  const [filter, setFilter] = useState(''); // State for combined name and language filter
+  const [sortOrder, setSortOrder] = useState('desc'); // State for sorting order
 
   useEffect(() => {
-    // CALL API
+    // Fetch repos from API
     const getRepos = async () => {
       try {
         const data = await FetchGitHubRepos(); 
         if (data) {
           setRepos(data); 
+          setFilteredRepos(data); // Set filtered repos to all repos initially
         }
       } catch (err) {
         setError("Error during resources' loading");
@@ -33,29 +45,95 @@ const ProjectsPage = () => {
       }
     };
 
-    getRepos(); // CALL API WHEN PAGE IS REFRESH
+    getRepos(); // Fetch repos when the page is refreshed
   }, []);
+
+  // Function to handle filtering and sorting
+  const handleFilterAndSort = () => {
+    const lowercasedFilter = filter.toLowerCase();
+
+    // Filter repos based on name and language
+    let filtered = repos.filter(repo =>
+      repo.name.toLowerCase().includes(lowercasedFilter) ||
+      (repo.language || '').toLowerCase().includes(lowercasedFilter)
+    );
+
+    // Sort repos by creation date
+    filtered.sort((a, b) => {
+      const dateA = new Date(a.created_at);
+      const dateB = new Date(b.created_at);
+      return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+    });
+
+    setFilteredRepos(filtered);
+  };
+
+  // Effect to apply filter and sorting whenever filter or sort order changes
+  useEffect(() => {
+    handleFilterAndSort();
+  }, [filter, sortOrder, repos]); // Trigger when filter, sortOrder, or repos change
+
+  // Handle filter input change
+  const handleFilterChange = (e) => {
+    setFilter(e.target.value);
+  };
+
+  // Handle sort order change
+  const handleSortChange = (e) => {
+    setSortOrder(e.target.value);
+  };
 
   // LOADING
   if (loading) {
-    return <p className="text-center  text-lg">Caricamento...</p>;
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <p className="text-lg">Loading...</p>
+      </div>
+    );
   }
 
   // ERROR
   if (error) {
-    return <p className="text-center text-red-500">{error}</p>;
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <p className="text-red-500 text-lg">{error}</p>
+      </div>
+    );
   }
 
-  // repo views
+  // Repo views
   return (
-    <div className="p-5 my-[150px]">
-      <h1 className="text-center text-3xl font-bold mb-8">Repository di GitHub</h1>
+    <div className="p-5 my-20 mx-auto max-w-screen-lg">
+      <h1 className="text-center text-3xl font-bold mb-8">GitHub Repositories</h1>
+      
+      <div className="flex flex-col md:flex-row items-center mb-6 gap-4">
+        {/* Combined input for name and language filter */}
+        <input
+          type="text"
+          placeholder="Filter by name or language..."
+          value={filter}
+          onChange={handleFilterChange}
+          className="p-2 border border-gray-300 bg-transparent text-gray-900 rounded flex-grow"
+          style={{ maxWidth: '400px' }}
+        />
+        
+        {/* Dropdown selector for sorting */}
+        <select
+          value={sortOrder}
+          onChange={handleSortChange}
+          className="p-2 border bg-transparent border-gray-800 rounded"
+        >
+          <option value="desc">Newest first</option>
+          <option value="asc">Oldest first</option>
+        </select>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {repos.map((repo) => (
+        {filteredRepos.map((repo) => (
           <div
             key={repo.id}
-            className="bg-white text-white text-shadow-lg p-6 rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:scale-105 cursor-pointer"
-            style={{ backgroundColor: generateRandomColor() }}
+            className="text-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:scale-105 cursor-pointer"
+            style={{ backgroundColor: getColorForRepo(repo.id) }}
             onClick={() => window.open(repo.html_url, '_blank')}
           >
             <h3 className="text-xl font-bold mb-3">{repo.name}</h3>
