@@ -94,7 +94,7 @@ const ProjectsPage = () => {
     <div className="p-5 my-20 mx-auto max-w-screen-lg">
       <h1 className="text-center text-3xl font-bold mb-8">GitHub Repositories</h1>
       
-      <div className="flex flex-col md:flex-row items-center mb-6 gap-4">
+      <div className="flex flex-col md:flex-row items-center mb-6 mt-4 gap-4">
         {/* Combined input for name and language filter */}
         <input
           type="text"

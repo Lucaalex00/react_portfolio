@@ -14,7 +14,7 @@ const Jumbotron = () => {
           />
         </div>
         <div className="text_side w-2/3 py-2a">
-          <h1 className="text-3xl text-gray-100 text-shadow-lg font-bold mb-5"><Link to="/aboutme" className='hover:text-red-100 duration-500'>Luca </Link>, 24 years old.</h1>
+          <h1 className="text-3xl text-gray-100 text-shadow-lg font-bold mb-5"><Link to="/aboutme" className='hover:text-red-100 duration-500'>Luca</Link>, 24 years old.</h1>
           <p className="text-white text-shadow-lg text-lg">
           For 7 years, I owned a small business in the metalworking sector.
           In 2024, I decided to take a leap into the unknown and completely change fields, thanks to an intensive 6-month course at "Boolean."
