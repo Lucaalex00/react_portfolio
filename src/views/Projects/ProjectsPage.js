@@ -1,17 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import FetchGitHubRepos from '../../stores/apiProjects';
-
-// Function to generate a random dark color
-const generateRandomColor = () => {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  // Ensure the color is not too light
-  const isTooLight = parseInt(color.substring(1), 16) > 0xFFFFFF;
-  return isTooLight ? generateRandomColor() : color;
-};
 
 // Function to generate a consistent color for a repository based on its ID
 const getColorForRepo = (repoId) => {
@@ -49,7 +37,7 @@ const ProjectsPage = () => {
   }, []);
 
   // Function to handle filtering and sorting
-  const handleFilterAndSort = () => {
+  const handleFilterAndSort = useCallback(() => {
     const lowercasedFilter = filter.toLowerCase();
 
     // Filter repos based on name and language
@@ -66,12 +54,12 @@ const ProjectsPage = () => {
     });
 
     setFilteredRepos(filtered);
-  };
+  }, [filter, sortOrder, repos]); // Include dependencies in useCallback
 
   // Effect to apply filter and sorting whenever filter or sort order changes
   useEffect(() => {
     handleFilterAndSort();
-  }, [filter, sortOrder, repos]); // Trigger when filter, sortOrder, or repos change
+  }, [handleFilterAndSort]); // Include handleFilterAndSort in dependencies
 
   // Handle filter input change
   const handleFilterChange = (e) => {
