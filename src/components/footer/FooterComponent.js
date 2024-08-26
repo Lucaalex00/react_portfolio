@@ -5,7 +5,7 @@ import NavComponent from '../nav/NavComponent';
 const FooterComponent = () => {
   return (
     <React.Fragment>
-      <footer className="bg-gray-500 bg-opacity-20 text-white py-6 w-full fixed bottom-0">
+      <footer className="bg-gray-500 px-5 bg-opacity-20 text-white py-6 w-full fixed bottom-0">
         <div className="container mx-auto flex justify-between items-center">
         {/* LEFT MENU */}
           <NavComponent/>

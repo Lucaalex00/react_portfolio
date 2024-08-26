@@ -2,7 +2,7 @@ import React from 'react'
 
 const AboutPage = () => {
   return (
-    <div className="bg-white p-10 rounded-lg shadow-lg max-w-4xl w-[80%] my-[150px]">
+    <div className="bg-white p-10 rounded-lg shadow-lg max-w-4xl w-[80%] mb-[120px] mt-[150px]">
       <h1 className="text-4xl font-bold text-gray-900 mb-6">About Me</h1>
       <p className="text-gray-600 text-lg leading-relaxed mb-4">
         Hi, I'm <strong>Luca Cirio</strong>, born in 2000. <br/> 
@@ -44,6 +44,10 @@ const AboutPage = () => {
       <h2 className="text-2xl font-semibold text-gray-900 mb-3">Staying Balanced...</h2>
       <p className="text-gray-600 text-lg leading-relaxed mb-4">
         I've always believed in one key principle : <br/> <strong className='text-gray-800'>It's important to keep both your body and mind in shape.</strong> The human mind gets bored doing the same thing endlessly, so <strong className='text-gray-800'>exploring the world, training my body, and freeing my mind through meditation</strong> are the three pillars of who I am.
+      </p>
+      <h2 className="text-2xl font-semibold text-gray-900 mb-3">Progress...</h2>
+      <p className="text-gray-600 text-lg leading-relaxed mb-4">
+      In August 2024, <strong>lucacirio.it</strong> was officially launched as a polished and professional <strong>portfolio website.</strong> This platform serves as a comprehensive showcase of my work, featuring a thoughtfully designed interface that <strong>highlights my projects, skills, and achievements.</strong> The site reflects a commitment to excellence and provides a seamless, engaging experience for visitors, demonstrating the culmination of meticulous planning and professional execution.
       </p>
     </div>
 

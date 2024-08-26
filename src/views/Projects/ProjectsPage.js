@@ -91,7 +91,7 @@ const ProjectsPage = () => {
 
   // Repo views
   return (
-    <div className="p-5 mt-[180px] mb-[50px] mx-auto max-w-screen-lg">
+    <div className="p-5 mt-[180px] mb-[80px] mx-auto max-w-screen-lg">
       <h1 className="text-center text-3xl font-bold mb-8">GitHub Repositories</h1>
       
       <div className="flex flex-col md:flex-row items-center mb-6 gap-4">
