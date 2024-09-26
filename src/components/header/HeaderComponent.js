@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import avatarDefault from './img/avataaars.svg';
 import avatarWink from './img/avataaars-2.svg';
 import burgerMenu from './img/hamburger-menu.svg';
+import openBurgerMenu from './img/burger.menu-vertical.svg';
 import CarouselMenuComponent from '../global/navCarousel/CarouselMenuComponent';
 import './header.css';
 
@@ -44,10 +45,10 @@ const HeaderComponent = () => {
     <>
       <header className="flex fixed justify-between items-center w-[100vw] h-[120px] bg-gray-500 rounded-s-md rounded-e-md bg-opacity-50 p-5 z-50">
         <div
-          className={`relative flex w-[100px] h-[100px] shadow-lg bg-gray-500 bg-opacity-50 rounded-full transition-all duration-500 ease-in-out avatar-container ps-1 ${
+          className={`relative flex w-[100px] h-[100px] shadow-2xl bg-gray-500 bg-opacity-50 rounded-full transition-all   duration-500 ease-in-out avatar-container ps-1 ${
             isHoverAvatar
-              ? 'border border-black bg-gray-300'
-              : 'border-gray-600 border-1'
+              ? 'border border-black bg-white bg-opacity-20'
+              : 'border-gray-500 border'
           } ${showMessage ? 'clicked' : ''}`}
           onMouseEnter={() => setIsHoverAvatar(true)}
           onMouseLeave={() => (!showMessage ? setIsHoverAvatar(false) : '')}
@@ -75,12 +76,22 @@ const HeaderComponent = () => {
         </div>
 
         <div className="right_menu_h relative w-[50px] h-[50px] rounded-full transition-all duration-500 ease-linear">
+          {isMenuOpen 
+          ?
           <img
-            src={burgerMenu}
-            alt="Burger Menu"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="absolute cursor-pointer"
+          src={openBurgerMenu}
+          alt="Burger Menu"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="absolute cursor-pointer"
           />
+          :
+          <img
+          src={burgerMenu}
+          alt="Burger Menu"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="absolute cursor-pointer"
+          />
+      }
         </div>
       </header>
 
